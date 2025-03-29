@@ -6,13 +6,14 @@
         - Extract winlibs-x86_64-posix-seh-gcc-11.4.0-mingw-w64ucrt-11.0.0-r1.zip and place "mingw64" in C:\
         - Add "C:\mingw64\bin" to path (environment variables)
 - Download appropriate toolchain for your target device, e.g. arm (Link: https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
-    - For Windows, get the .exe file and install it
-    - Get the startup, linker and cmsis/device related include files for your device by generating a project from STM32CubeMX with Toolchain/IDE set to "Makefile" (Link: https://www.st.com/en/development-tools/stm32cubemx.html) Note:  We might be able to generate this file by ourselves, but not in this project
+    - For Windows, get the .exe file and install it, e.g. arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-arm-none-eabi.exe
+- Get the startup, linker and cmsis/device related include files for your device by generating a project from STM32CubeMX with Toolchain/IDE set to "Makefile" (Link: https://www.st.com/en/development-tools/stm32cubemx.html) Note:  We might be able to generate this file by ourselves, but not in this project
     - Copy startup, linker and cmsis/device related include files to the include folder, e.g.,
         - startup_stm32f401xe.s
         - STM32F401RETx_FLASH.ld
         - stm32f4xx.h
         - stm32f401xe.h
+        - system_stm32f4xx.c
         - system_stm32f4xx.h
         - core_cm4.h
         - cmsis_version.h

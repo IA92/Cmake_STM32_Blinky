@@ -31,8 +31,7 @@ typedef enum status_t
 /***For system setup***/
 typedef enum
 {
-    SYSTEM_CLOCK_SWITCH_MSI,
-    SYSTEM_CLOCK_SWITCH_HSI16,
+    SYSTEM_CLOCK_SWITCH_HSI,
     SYSTEM_CLOCK_SWITCH_HSE,
     SYSTEM_CLOCK_SWITCH_PLL,
 } system_clock_switch_t;
@@ -43,21 +42,6 @@ typedef enum
     SYSTEM_VOLTAGE_REGULATOR_RANGE_2 = 2,
 } system_voltage_regulator_range_t;
 
-typedef enum
-{
-    SYSTEM_MSI_RANGE_100K,
-    SYSTEM_MSI_RANGE_200K,
-    SYSTEM_MSI_RANGE_400K,
-    SYSTEM_MSI_RANGE_800K,
-    SYSTEM_MSI_RANGE_1M,
-    SYSTEM_MSI_RANGE_2M,
-    SYSTEM_MSI_RANGE_4M,    //6, default value
-    SYSTEM_MSI_RANGE_8M,
-    SYSTEM_MSI_RANGE_16M,
-    SYSTEM_MSI_RANGE_24M,
-    SYSTEM_MSI_RANGE_32M,
-    SYSTEM_MSI_RANGE_48M,
-} system_msi_range_t;
 
 typedef enum
 {
@@ -140,13 +124,5 @@ void system_clock_switch_select(uint32_t system_clock_switch);
 /***System clock init***/
 void system_clock_init(bool hse_en, bool lse_en);
 
-/***For PLL setup for SAI***/
-void system_pll_clock_init_for_sai(uint32_t system_pll_plln);
-void system_pll_clock_deinit_for_sai(void);
-
-/***For RTC clock source select***/
-/*  Note: Currently LSE is used in the initial initialisation,
- *        This function can be used to change it if necessary */
-status_t system_rtc_clock_select(uint32_t system_rtcsel);
 
 #endif /* SYSTEM_CONFIG_H_ */

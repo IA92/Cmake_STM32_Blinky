@@ -15,7 +15,7 @@ int main(void)
 
     while (1)
     {
-        uint32_t blinky_br_pos_offset = 15;
+        uint32_t blinky_br_pos_offset = 16;
         if (p_blinky_port->ODR & (1UL << blinky_pin))
         {
             p_blinky_port->BSRR |= 1UL << (blinky_pin + blinky_br_pos_offset);
