@@ -26,6 +26,10 @@
 - STM32f401RE Datasheet: https://www.st.com/resource/en/datasheet/stm32f401re.pdf
 - STM32F401xB/C and STM32F401xD/E Reference Manual: https://www.st.com/resource/en/reference_manual/rm0368-stm32f401xbc-and-stm32f401xde-advanced-armbased-32bit-mcus-stmicroelectronics.pdf
 - Nucleo-XXXXRX Board Schematic: file:///C:/Users/Indri92/Downloads/en.MB1136-DEFAULT-C05_Schematic.pdf
+- STM32CubeProgrammer Software Description: https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf 
 ## Building the project
 - Configure CMake by calling: cmake -G "MinGW Makefiles" -B build
 - Build by calling: cmake --build build
+## Flashing the .bin file to the memory of the device
+- <path-to-STM32_Programmer_CLI.exe> -c port=SWD freq=4000 reset=HWrst -w <path-to-bin-file> <start-adddress-of-memory>
+- Example: `C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844\tools\bin\STM32_Programmer_CLI.exe -c port=SWD freq=4000  reset=HWrst -w D:\Data\Personal\Documents\Others\Cmake_STM32_Blinky\build\blinky.bin 0x8000000`
