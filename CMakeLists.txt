@@ -44,8 +44,7 @@ target_compile_options(blinky PRIVATE
 set(STM32F401RE_LINK_FLAGS 
                     "-mcpu=cortex-m4 \
                     -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard \
-                    -specs=nano.specs \
-                    -T${CMAKE_SOURCE_DIR}/include/device/STM32F401RETx_FLASH.ld -lc -lm -lnosys \
+                    -T${CMAKE_SOURCE_DIR}/include/device/STM32F401RETx_FLASH.ld -lc -lm \
                     -Wl,-Map=${CMAKE_BINARY_DIR}/blinky.map,--cref \
                     -Wl,--gc-sections"
 )
